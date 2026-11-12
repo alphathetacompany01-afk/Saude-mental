@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Informação, apoio e pequenas práticas para cuidar da saúde mental.">
+  <title>Saúde Mental | Cuidar de ti importa</title>
+  <style>
+    :root {
+      --green: #24483f; --green2: #456d5d; --cream: #f7f5ef;
+      --paper: #fffefa; --ink: #25352f; --muted: #68756f; --gold: #d8b77b;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--cream); line-height: 1.65; }
+    a { color: inherit; }
+    .topbar { position: sticky; top: 0; z-index: 10; background: rgba(255,254,250,.94); backdrop-filter: blur(12px); border-bottom: 1px solid #e8e7df; }
+    .nav { max-width: 1120px; margin: auto; padding: 13px 22px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { color: var(--green); font-weight: 800; letter-spacing: .3px; text-decoration: none; font-size: 1.1rem; }
+    .navlinks { display: flex; flex-wrap: wrap; gap: 18px; }
+    .navlinks a { text-decoration: none; color: #52635b; font-size: .92rem; font-weight: 600; }
+    .navlinks a:hover { color: var(--green2); }
+    .hero { min-height: 560px; display: flex; align-items: center; color: white; background: linear-gradient(90deg,rgba(15,37,31,.76),rgba(15,37,31,.18)), url('images/hero.jpg') center/cover; }
+    .hero-content { width: min(1120px,100%); margin: auto; padding: 90px 24px; }
+    .eyebrow { text-transform: uppercase; letter-spacing: 3px; font-size: .76rem; font-weight: 700; color: #e8d6b2; }
+    h1 { max-width: 680px; margin: 12px 0 18px; font-family: Georgia,serif; font-size: clamp(3rem,8vw,6.2rem); line-height: .98; font-weight: 500; }
+    .hero p { max-width: 560px; font-size: 1.13rem; color: #f2f3ed; }
+    .btn { display: inline-block; margin-top: 18px; padding: 12px 22px; border-radius: 30px; background: var(--gold); color: #263b33; text-decoration: none; font-weight: 800; }
+    main { max-width: 1120px; margin: auto; padding: 25px 22px 70px; }
+    section { padding: 65px 0 15px; scroll-margin-top: 75px; }
+    .section-head { max-width: 700px; margin-bottom: 28px; }
+    .section-head h2 { color: var(--green); font: 500 clamp(2rem,4vw,3.2rem)/1.1 Georgia,serif; margin: 8px 0 12px; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .tag { color: var(--green2); text-transform: uppercase; font-size: .75rem; font-weight: 800; letter-spacing: 2px; }
+    .intro-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 34px; align-items: center; }
+    .intro-grid img { width: 100%; height: 360px; object-fit: cover; border-radius: 18px; }
+    .quote { background: #e9eee7; border-left: 4px solid var(--green2); padding: 18px 22px; border-radius: 0 12px 12px 0; color: var(--green); font: italic 1.25rem Georgia,serif; }
+    .cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .card { background: var(--paper); border: 1px solid #ecebe4; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(33,55,46,.05); }
+    .card img { width: 100%; height: 205px; object-fit: cover; display: block; }
+    .card-body { padding: 20px; }
+    .card h3 { margin: 0 0 8px; color: var(--green); font-size: 1.15rem; }
+    .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+    .tips { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .tip { background: var(--paper); padding: 18px; border-radius: 14px; border: 1px solid #ecebe4; }
+    .tip strong { color: var(--green); display: block; margin-bottom: 4px; }
+    .banner { margin-top: 30px; border-radius: 20px; padding: 34px; color: white; background: linear-gradient(120deg,rgba(28,61,51,.94),rgba(54,91,73,.82)), url('images/caminhada.jpg') center/cover; }
+    .banner h2 { font: 500 clamp(1.8rem,4vw,2.7rem) Georgia,serif; margin: 0 0 10px; }
+    .banner p { max-width: 700px; margin: 0; color: #edf2ed; }
+    .notice { background: #f1eadc; border-radius: 14px; padding: 20px; color: #5b5141; }
+    footer { background: #203d35; color: #eaf0e9; text-align: center; padding: 28px 20px; }
+    footer p { margin: 5px; font-size: .9rem; }
+    @media (max-width: 760px) {
+      .nav { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .navlinks { gap: 12px; }
+      .hero { min-height: 500px; }
+      .intro-grid,.cards,.tips { grid-template-columns: 1fr; }
+      .intro-grid img { height: 270px; }
+      section { padding-top: 48px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="#inicio">Saúde Mental</a>
+      <div class="navlinks">
+        <a href="#sobre">O que é</a>
+        <a href="#cuidados">Cuidados</a>
+        <a href="#apoio">Pedir ajuda</a>
+      </div>
+    </nav>
+  </header>
+
+  <header class="hero" id="inicio">
+    <div class="hero-content">
+      <div class="eyebrow">Bem-estar começa por dentro</div>
+      <h1>A tua saúde mental importa.</h1>
+      <p>Cuidar da mente também é cuidar da vida. Aprende a reconhecer emoções, criar hábitos saudáveis e procurar apoio quando precisares.</p>
+      <a class="btn" href="#sobre">Começar a explorar</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="sobre">
+      <div class="intro-grid">
+        <div>
+          <div class="tag">Compreender é o primeiro passo</div>
+          <div class="section-head">
+            <h2>O que é saúde mental?</h2>
+            <p>Saúde mental é uma parte essencial do bem-estar. Está relacionada com a forma como pensamos, sentimos, enfrentamos desafios, nos relacionamos com outras pessoas e participamos na comunidade.</p>
+          </div>
+          <p>Não significa estar feliz o tempo todo. Todas as pessoas podem passar por momentos difíceis, sentir ansiedade, tristeza ou stress. Esses sentimentos merecem atenção, respeito e cuidado.</p>
+          <div class="quote">“Não precisas de estar bem o tempo todo. Pedir apoio também é um sinal de coragem.”</div>
+        </div>
+        <img src="images/meditacao.jpg" alt="Pessoa a meditar tranquilamente ao ar livre">
+      </div>
+    </section>
+
+    <section id="cuidados">
+      <div class="section-head">
+        <div class="tag">Pequenos passos, todos os dias</div>
+        <h2>Como cuidar da mente</h2>
+        <p>Há hábitos simples que podem contribuir para o bem-estar emocional. Escolhe os que fazem sentido para ti e pratica-os sem pressão.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <img src="images/ilustracoes.jpg" alt="Ilustrações com mensagens de cuidado da saúde mental">
+          <div class="card-body"><h3>Respeita o teu ritmo</h3><p>Faz pausas, descansa e evita comparar o teu percurso com o das outras pessoas.</p></div>
+        </article>
+        <article class="card">
+          <img src="images/conversa.jpg" alt="Duas pessoas a conversar num ambiente acolhedor">
+          <div class="card-body"><h3>Conversa com alguém</h3><p>Partilhar o que sentes com uma pessoa de confiança pode ajudar-te a não enfrentar tudo sozinho.</p></div>
+        </article>
+        <article class="card">
+          <img src="images/caminhada.jpg" alt="Pessoa a caminhar numa floresta iluminada pelo sol">
+          <div class="card-body"><h3>Cuida do corpo</h3><p>Procura dormir o suficiente, alimentar-te bem e incluir movimento ou caminhadas na rotina.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <div class="tag">Ideias para experimentar</div>
+        <h2>Hábitos que podem ajudar</h2>
+      </div>
+      <div class="tips">
+        <div class="tip"><strong>01 · Respira com calma</strong>Reserva alguns minutos para respirar devagar e prestar atenção ao momento presente.</div>
+        <div class="tip"><strong>02 · Mantém ligações</strong>Procura estar em contacto com amigos, familiares ou pessoas em quem confias.</div>
+        <div class="tip"><strong>03 · Organiza o teu dia</strong>Divide tarefas grandes em passos pequenos e permite-te fazer pausas.</div>
+        <div class="tip"><strong>04 · Faz algo de que gostas</strong>Dedica algum tempo à música, leitura, arte, desporto ou outra atividade agradável.</div>
+      </div>
+      <div class="banner">
+        <h2>Um passo de cada vez.</h2>
+        <p>O teu bem-estar merece atenção. Não precisas de resolver tudo hoje: começa por uma pequena atitude de cuidado.</p>
+      </div>
+    </section>
+
+    <section id="apoio">
+      <div class="intro-grid">
+        <div>
+          <div class="tag">Não estás sozinho</div>
+          <div class="section-head">
+            <h2>Pedir ajuda é importante</h2>
+            <p>Se a tristeza, ansiedade ou sofrimento estiverem a afetar o teu dia a dia, fala com alguém de confiança e procura um profissional de saúde, como um psicólogo ou médico.</p>
+          </div>
+          <p>Se estiveres em perigo imediato ou pensares em magoar-te, procura ajuda presencial urgente junto de um serviço de saúde ou de uma pessoa de confiança que possa ficar contigo.</p>
+        </div>
+        <img src="images/apoio.jpg" alt="Pessoa a passar por um momento emocionalmente difícil">
+      </div>
+      <div class="notice"><strong>Nota:</strong> Este website tem finalidade educativa e não substitui avaliação, diagnóstico ou tratamento por profissionais de saúde.</div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Saúde Mental — Cuidar de ti importa</strong></p>
+    <p>Informação para promover o bem-estar, a empatia e a procura de apoio.</p>
+  </footer>
+</body>
+</html>
